@@ -167,3 +167,8 @@ body {
   left: 200px;
   transform: translateY(-50%);
 }
+
+#company-logo {
+    height: 50px;
+    margin-right: 15px;
+}
