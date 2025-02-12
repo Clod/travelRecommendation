@@ -2,32 +2,46 @@
 
 <html>
 
-    <head> 
-         <title>TravelBloom</title>
-    </head>
+<head>
+    <title>TravelBloom</title>
+    <link rel="stylesheet" type="text/css" href="travel_recommendation.css">
+</head>
 
-    <body>
+<body>
 
-        <nav>
-            <h1>Health Analysis Census</h1>
+    <nav>
+        <h1>TravelBloom</h1>
+        <ul>
+            <li>
+                <a href="./index.html" id="home">Home
+                </a>
+            </li>
+            <li>
+                <a href="./about.html" id="home">About Us
+                </a>
+            </li>
+            <li>
+                <a href="./health_contact.html" id="contact">Contact Us
+                </a>
+            </li>
+        </ul>
+        <div id="search-container">
             <ul>
-                <li>
-                    <a href="./index.html" id="home">Home
-                    </a>
+                <li><input type="text" id="conditionInput" placeholder="Enter a destination or keyword">
                 </li>
-                <li>
-                    <a href="./health_contact.html" id="contact">Contact Us
-                    </a>
-                </li>
-                <li><input type="text" id="conditionInput" placeholder="Enter a health condition">
-                </li>
-                <li>
-                    <button id='btnSearch'>Search</button>
-                </li>
+                <div id="search-buttons">
+                    
+                        <button id='btnSearch'>Search</button>
+                    
+                    
+                        <button id='btnClear'>Clear</button>
+                    
+                </div>
             </ul>
-        </nav>
+        </div>
+    </nav>
 
-        
-    </body>
+
+</body>
 
 </html>
