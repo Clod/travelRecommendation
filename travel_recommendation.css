@@ -207,7 +207,7 @@ body {
 
 .team-header {
   font-family: Arial, sans-serif;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   color: white;
   transform: translateY(-30%);
@@ -244,4 +244,26 @@ body {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.contact-us-container {
+  font-family: Arial, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 60%;
+  left: 200px;
+  transform: translateY(-50%);
+}
+
+.get-in-touch-container {
+  font-family: Arial, sans-serif;
+  font-size: .75em;
+  font-weight: normal;
+  color: white;
+  position: absolute;
+  top: 70%;
+  left: 200px;
+  transform: translateY(-50%);
 }
