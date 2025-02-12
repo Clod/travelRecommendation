@@ -267,3 +267,19 @@ body {
   left: 200px;
   transform: translateY(-50%);
 }
+
+.contact-form-container {
+  font-family: Arial, sans-serif;
+  font-size: .75em;
+  font-weight: normal;
+  color: white;
+  position: absolute;
+  top: 70%;
+  right: 200px;
+  transform: translateY(-50%);
+}
+
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+}
