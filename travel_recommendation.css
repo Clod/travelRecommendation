@@ -307,3 +307,22 @@ body {
   border: none;
   border-radius: 5px;
 }
+
+.search-results-container {
+  font-family: Arial, sans-serif;
+  width: 800px;
+  font-size: .75em;
+  font-weight: normal;
+  color: white;
+  position: absolute;
+  top: 20%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.search-results-container img {
+  max-width: 100%;
+  height: auto; 
+  display: block; 
+}
+
