@@ -270,16 +270,40 @@ body {
 
 .contact-form-container {
   font-family: Arial, sans-serif;
+  width: 600px;
   font-size: .75em;
   font-weight: normal;
   color: white;
   position: absolute;
-  top: 70%;
-  right: 200px;
+  top: 55%;
+  right: 20px;
   transform: translateY(-50%);
 }
 
 .contact-form-container form {
   display: flex;
   flex-direction: column;
+}
+
+.contact-form-container form input {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.contact-form-container form textarea {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.contact-form-container form button {
+  background-color: #209999;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
