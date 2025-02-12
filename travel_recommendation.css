@@ -74,3 +74,33 @@ nav {
     border-radius: 5px;
     margin-left: 10px;
   }
+
+.social-media-container {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.social-media-container a img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    filter: invert(100%); /* Make icons white */
+}
+
+.twitter-icon-container {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.twitter-icon-container a img {
+    width: 50px;
+    height: 50px;
+}
