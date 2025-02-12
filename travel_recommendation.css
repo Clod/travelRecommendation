@@ -123,7 +123,17 @@ nav {
   font-weight: bold;
   color: white;
   position: absolute;
-  top: 40%;
+  top: 45%;
+  left: 200px;
+  transform: translateY(-50%);
+}
+
+.marketing-container {
+  font-family: Arial, sans-serif;
+  font-size: 1.1em;
+  color: white;
+  position: absolute;
+  top: 65%;
   left: 200px;
   transform: translateY(-50%);
 }
