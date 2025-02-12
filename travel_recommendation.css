@@ -189,7 +189,59 @@ body {
   font-size: 1.1em;
   color: white;
   position: absolute;
-  top: 45%;
-  left: 200px;
+  top: 40%;
+  left: 220px;
   transform: translateY(-50%);
+}
+
+.team-container {
+  font-family: Arial, sans-serif;
+  font-size: 1.1em;
+  color: white;
+  position: absolute;
+  top: 80%;
+  left: 300px;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+.team-header {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  transform: translateY(-30%);
+  margin-right: 100px;
+  
+}
+.team-member {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 90px;
+}
+.team-member .name {
+  margin: 0;
+  font-size: .75em;
+  font-weight: bold;
+}
+
+.team-member p {
+  margin: 5px 0;
+}
+
+.team-member .role {
+  font-size: 0.60em;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.7);
+  
+}
+
+.team-member button {
+  background-color: #243ddb;
+  font-size: 0.70em;
+  color: white;
+  border: 1px solid rgb(169, 168, 168);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
