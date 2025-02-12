@@ -172,3 +172,24 @@ body {
     height: 50px;
     margin-right: 15px;
 }
+
+.about-us-container {
+  font-family: Arial, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 20%;
+  left: 200px;
+  transform: translateY(-50%);
+}
+
+.welcome-container {
+  font-family: Arial, sans-serif;
+  font-size: 1.1em;
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 200px;
+  transform: translateY(-50%);
+}
