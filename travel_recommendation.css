@@ -116,3 +116,14 @@ nav {
     height: 3ch;
     margin-bottom: 30px;
 }
+
+.main-title-container {
+  font-family: Arial, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 200px;
+  transform: translateY(-50%);
+}
