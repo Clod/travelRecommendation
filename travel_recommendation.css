@@ -1,10 +1,9 @@
 nav {
-    background-color: #f0f0f0;
-    padding: 20px;
+    background-color: #000000;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
   }
   
   nav ul {
@@ -19,16 +18,23 @@ nav {
     margin-right: 10px;
   }
   
+  #iso {
+    color: white;
+  }
+
   nav a {
     text-decoration: none;
-    color: #333;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    margin-right: 15px;
   }
 
   #search-container {
     display: flex;
     align-items: center;
     background-color: #fff;
+    color: #209999;
     border-radius: 20px;
     padding: 5px 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -59,6 +65,11 @@ nav {
     font-size: 16px;
     border-radius: 20px;
     width: 300px;
+  }
+
+  #conditionInput::placeholder {
+    color: #209999; /* Replace with your desired color */
+    opacity: .6; /* Ensure full visibility (some browsers reduce opacity by default) */
   }
 
   #search-container button {
@@ -129,7 +140,7 @@ nav {
 }
 
 .book-now-button {
-  background-color: green;
+  background-color: #209999;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -139,6 +150,7 @@ nav {
   top: 80%;
   left: 200px;
   transform: translateY(-50%);
+  border-radius: 8px; 
 }
 
 .marketing-container {
