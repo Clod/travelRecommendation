@@ -76,7 +76,7 @@ function displayResults(results) {
         // Append the result div to the search results container    
         searchResults.appendChild(resultDiv);
 
-
+/*
         // Create a new div element for the search result
         resultDiv = document.createElement('div');
         resultDiv.classList.add('result-card');
@@ -103,7 +103,7 @@ function displayResults(results) {
         visitButton.textContent = 'Visit';
         visitButton.classList.add('visit-button');
         resultDiv.appendChild(visitButton);
-
+*/
         // Append the result div to the search results container    
         searchResults.appendChild(resultDiv);
 

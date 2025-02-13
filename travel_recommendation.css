@@ -319,7 +319,7 @@ body {
   top: 150px;  /* Position it below the nav bar */
   right: 50px;  /* Position it to the far right */
   transform: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 8px;
   visibility: hidden;
 }
