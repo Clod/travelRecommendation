@@ -8,7 +8,6 @@ try {
             console.log(data);
             database = data;
             console.log('Data fetched successfully:', database);
-            search(); // Call search function after data is fetched
         });
 } catch (error) {
     console.error('Error fetching data:', error.message);
@@ -40,22 +39,29 @@ results = []
 // Function to search for travel recommendations based on user input
 function search() {
 
-    debugger;
+    //debugger;
+    console.log('Searching...');
+
     // Get user input from the search bar
     let userInput = document.getElementById('conditionInput').value.toLowerCase();
+
+    if (userInput === '') {
+        alert('Please enter a search term \n (countries, beaches or temples) ');
+        return;
+    }
 
     // Clear previous results
     results = [];
 
     // If user searches for "countries" or partial match
-    if ('countries'.includes(userInput)) {
+    if ('countries'.includes(userInput) || 'country'.includes(userInput)) {
         database.countries.forEach(country => {
             country.cities.forEach(city => {
                 results.push(new TravelRecommendation(city.name, city.description, city.imageUrl));
             });
         });
-        displayResults(results);
-        return;
+        // displayResults(results);
+        // return;
     }
 
     // If user searches for "beaches" or partial match
@@ -63,8 +69,8 @@ function search() {
         database.beaches.forEach(beach => {
             results.push(new TravelRecommendation(beach.name, beach.description, beach.imageUrl));
         });
-        displayResults(results);
-        return;
+        // displayResults(results);
+        // return;
     }
 
     // If user searches for "temples" or partial match
@@ -72,17 +78,12 @@ function search() {
         database.temples.forEach(temple => {
             results.push(new TravelRecommendation(temple.name, temple.description, temple.imageUrl));
         });
-        displayResults(results);
-        return;
+        // displayResults(results);
+        // return;
     }
 
-    // Get user input from the search bar
-    // database.countries[0].cities[0].imageUrl es sydney.jpeg
-    // database.countries.forEach(country => {
-    //     country.cities.forEach(city => {
-    //         results.push(city);
-    //     });
-    // });
+    displayResults(results);
+    return;
 }
 
 // Display the search results
@@ -137,34 +138,7 @@ function displayResults(results) {
         // Append the result div to the search results container    
         searchResults.appendChild(resultDiv);
 
-        /*
-                // Create a new div element for the search result
-                resultDiv = document.createElement('div');
-                resultDiv.classList.add('result-card');
-                // Show the image
-                image = document.createElement('img');
-                console.log("The image to show is at: " + result[1].imageUrl);
-                // image.src = database.countries[0].cities[1].imageUrl; // Esto funciona
-                image.src = result[0].imageUrl;
-                image.classList.add('result-image');
-                resultDiv.appendChild(image);
-                // Create a new paragraph element for the search result name
-                resultName = document.createElement('p');
-                resultName.textContent = result[0].name;
-                resultName.classList.add('result-name');
-                resultDiv.appendChild(resultName);
-                // Create a new paragraph element for the search result description
-                resultDescription = document.createElement('p');
-                resultDescription.textContent = result[0].description;
-                resultDescription.classList.add('result-description');
-                resultDiv.appendChild(resultDescription);
-        
-                // Append a visit button
-                visitButton = document.createElement('button');
-                visitButton.textContent = 'Visit';
-                visitButton.classList.add('visit-button');
-                resultDiv.appendChild(visitButton);
-        */
+  
         // Append the result div to the search results container    
         searchResults.appendChild(resultDiv);
 
