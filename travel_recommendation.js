@@ -14,6 +14,15 @@ try {
     console.error('Error fetching data:', error.message);
 }
 
+// Create a class to represent a travel recommendation
+class TravelRecommendation {
+    constructor(name, description, image) {
+        this.name = name;
+        this.description = description;
+        this.image = image;
+    }
+}
+
 // Attach search event listener to the search button
 document.getElementById('btnSearch').addEventListener('click', search);
 
@@ -21,7 +30,7 @@ document.getElementById('btnSearch').addEventListener('click', search);
 document.getElementById('btnClear').addEventListener('click', clearResults);
 
 // Add event listener to select all text in input when focused
-document.getElementById('conditionInput').addEventListener('focus', function() {
+document.getElementById('conditionInput').addEventListener('focus', function () {
     this.select();
 });
 
@@ -30,14 +39,50 @@ results = []
 
 // Function to search for travel recommendations based on user input
 function search() {
+
+    debugger;
+    // Get user input from the search bar
+    let userInput = document.getElementById('conditionInput').value.toLowerCase();
+
+    // Clear previous results
+    results = [];
+
+    // If user searches for "countries" or partial match
+    if ('countries'.includes(userInput)) {
+        database.countries.forEach(country => {
+            country.cities.forEach(city => {
+                results.push(new TravelRecommendation(city.name, city.description, city.imageUrl));
+            });
+        });
+        displayResults(results);
+        return;
+    }
+
+    // If user searches for "beaches" or partial match
+    if ('beaches'.includes(userInput)) {
+        database.beaches.forEach(beach => {
+            results.push(new TravelRecommendation(beach.name, beach.description, beach.imageUrl));
+        });
+        displayResults(results);
+        return;
+    }
+
+    // If user searches for "temples" or partial match
+    if ('temples'.includes(userInput)) {
+        database.temples.forEach(temple => {
+            results.push(new TravelRecommendation(temple.name, temple.description, temple.imageUrl));
+        });
+        displayResults(results);
+        return;
+    }
+
     // Get user input from the search bar
     // database.countries[0].cities[0].imageUrl es sydney.jpeg
-    database.countries.forEach(country => {
-        country.cities.forEach(city => {
-            results.push(city);
-        });
-    });
-    displayResults(results);
+    // database.countries.forEach(country => {
+    //     country.cities.forEach(city => {
+    //         results.push(city);
+    //     });
+    // });
 }
 
 // Display the search results
@@ -48,6 +93,12 @@ function displayResults(results) {
     // Get the search results container element
     // debugger;
     const searchResults = document.getElementById('search-results');
+
+    // If results is empty, display a message
+    if (results.length === 0) {
+        searchResults.innerHTML = '<h1>No results found.</h1>';
+        return;
+    }
 
     // searchResults.style.visibility = 'visible';
 
@@ -61,9 +112,9 @@ function displayResults(results) {
         resultDiv.classList.add('result-card');
         // Show the image
         let image = document.createElement('img');
-        console.log("The image to show is at: " + result.imageUrl);
+        console.log("The image to show is at: " + result.image);
         // image.src = database.countries[0].cities[1].imageUrl; // Esto funciona
-        image.src = "images/" + result.imageUrl;
+        image.src = "images/" + result.image;
         image.classList.add('result-image');
         resultDiv.appendChild(image);
         // Create a new paragraph element for the search result name
@@ -86,34 +137,34 @@ function displayResults(results) {
         // Append the result div to the search results container    
         searchResults.appendChild(resultDiv);
 
-/*
-        // Create a new div element for the search result
-        resultDiv = document.createElement('div');
-        resultDiv.classList.add('result-card');
-        // Show the image
-        image = document.createElement('img');
-        console.log("The image to show is at: " + result[1].imageUrl);
-        // image.src = database.countries[0].cities[1].imageUrl; // Esto funciona
-        image.src = result[0].imageUrl;
-        image.classList.add('result-image');
-        resultDiv.appendChild(image);
-        // Create a new paragraph element for the search result name
-        resultName = document.createElement('p');
-        resultName.textContent = result[0].name;
-        resultName.classList.add('result-name');
-        resultDiv.appendChild(resultName);
-        // Create a new paragraph element for the search result description
-        resultDescription = document.createElement('p');
-        resultDescription.textContent = result[0].description;
-        resultDescription.classList.add('result-description');
-        resultDiv.appendChild(resultDescription);
-
-        // Append a visit button
-        visitButton = document.createElement('button');
-        visitButton.textContent = 'Visit';
-        visitButton.classList.add('visit-button');
-        resultDiv.appendChild(visitButton);
-*/
+        /*
+                // Create a new div element for the search result
+                resultDiv = document.createElement('div');
+                resultDiv.classList.add('result-card');
+                // Show the image
+                image = document.createElement('img');
+                console.log("The image to show is at: " + result[1].imageUrl);
+                // image.src = database.countries[0].cities[1].imageUrl; // Esto funciona
+                image.src = result[0].imageUrl;
+                image.classList.add('result-image');
+                resultDiv.appendChild(image);
+                // Create a new paragraph element for the search result name
+                resultName = document.createElement('p');
+                resultName.textContent = result[0].name;
+                resultName.classList.add('result-name');
+                resultDiv.appendChild(resultName);
+                // Create a new paragraph element for the search result description
+                resultDescription = document.createElement('p');
+                resultDescription.textContent = result[0].description;
+                resultDescription.classList.add('result-description');
+                resultDiv.appendChild(resultDescription);
+        
+                // Append a visit button
+                visitButton = document.createElement('button');
+                visitButton.textContent = 'Visit';
+                visitButton.classList.add('visit-button');
+                resultDiv.appendChild(visitButton);
+        */
         // Append the result div to the search results container    
         searchResults.appendChild(resultDiv);
 
