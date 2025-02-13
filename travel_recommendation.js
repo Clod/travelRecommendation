@@ -8,12 +8,13 @@ try {
             console.log(data);
             database = data;
             console.log('Data fetched successfully:', database);
+            search(); // Call search function after data is fetched
         });
 } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data:', error.message);
 }
 
-// Attach search event listener to the search button   
+// Attach search event listener to the search button
 document.getElementById('btnSearch').addEventListener('click', search);
 
 //Attach clear event listener to the clear button
@@ -31,7 +32,11 @@ results = []
 function search() {
     // Get user input from the search bar
     // database.countries[0].cities[0].imageUrl es sydney.jpeg
-    results.push(database.countries[0].cities);
+    database.countries.forEach(country => {
+        country.cities.forEach(city => {
+            results.push(city);
+        });
+    });
     displayResults(results);
 }
 
@@ -56,19 +61,19 @@ function displayResults(results) {
         resultDiv.classList.add('result-card');
         // Show the image
         let image = document.createElement('img');
-        console.log("The image to show is at: " + result[1].imageUrl);
+        console.log("The image to show is at: " + result.imageUrl);
         // image.src = database.countries[0].cities[1].imageUrl; // Esto funciona
-        image.src = result[1].imageUrl;
+        image.src = "images/" + result.imageUrl;
         image.classList.add('result-image');
         resultDiv.appendChild(image);
         // Create a new paragraph element for the search result name
         let resultName = document.createElement('p');
-        resultName.textContent = result[1].name;
+        resultName.textContent = result.name;
         resultName.classList.add('result-name');
         resultDiv.appendChild(resultName);
         // Create a new paragraph element for the search result description
         let resultDescription = document.createElement('p');
-        resultDescription.textContent = result[1].description;
+        resultDescription.textContent = result.description;
         resultDescription.classList.add('result-description');
         resultDiv.appendChild(resultDescription);
 
