@@ -322,6 +322,7 @@ body {
   background-color: rgba(0, 0, 0, 0);
   border-radius: 8px;
   visibility: hidden;
+  overflow-y: auto; /* Makes the container scrollable vertically */
 }
 
 .search-results-container .result-image {

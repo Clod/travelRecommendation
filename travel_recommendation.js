@@ -39,7 +39,7 @@ function displayResults(results) {
     // debugger;
     const searchResults = document.getElementById('search-results');
 
-    searchResults.style.visibility = 'visible';
+    // searchResults.style.visibility = 'visible';
 
     // Clear the search results container
     searchResults.innerHTML = '';
@@ -109,6 +109,9 @@ function displayResults(results) {
 
     })
 
+    // Clear the search results in case the user clicks on the search bar again
+    results = [];
+    searchResults.style.visibility = 'visible';
 }
 
 // Clear the search results
@@ -121,4 +124,9 @@ function clearResults() {
     // Clear the search results container
     searchResults.innerHTML = '';
     searchResults.style.visibility = 'hidden';
+
+    let conditionInput = document.getElementById('conditionInput');
+
+    // Clear the condition input
+    conditionInput.value = '';
 }
