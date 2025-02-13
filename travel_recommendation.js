@@ -127,8 +127,8 @@ function clearResults() {
     const searchResults = document.getElementById('search-results');
     results = [];
     // Clear the search results container
-    searchResults.innerHTML = '';
-    searchResults.style.visibility = 'hidden';
+    searchResults.innerHTML = '<h1>Please enter a valid search query</h1>';
+    // searchResults.style.visibility = 'hidden';
 
     let conditionInput = document.getElementById('conditionInput');
 

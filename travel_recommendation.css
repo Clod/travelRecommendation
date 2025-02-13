@@ -321,7 +321,7 @@ body {
   transform: none;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 8px;
-  visibility: hidden;
+  /* visibility: hidden; */
   overflow-y: auto; /* Makes the container scrollable vertically */
 }
 
