@@ -19,16 +19,15 @@ document.getElementById('btnSearch').addEventListener('click', search);
 //Attach clear event listener to the clear button
 document.getElementById('btnClear').addEventListener('click', clearResults);
 
-// Function to search for travel recommendations based on user input
+// Initialize an empty array to store the search results
+results = []
 
+// Function to search for travel recommendations based on user input
 function search() {
-    // Initialize an empty array to store the search results
-    results = []
     // Get user input from the search bar
     // database.countries[0].cities[0].imageUrl es sydney.jpeg
     results.push(database.countries[0].cities);
     displayResults(results);
- 
 }
 
 // Display the search results
@@ -40,26 +39,74 @@ function displayResults(results) {
     // debugger;
     const searchResults = document.getElementById('search-results');
 
+    searchResults.style.visibility = 'visible';
+
     // Clear the search results container
     searchResults.innerHTML = '';
     // Loop through the search results and create a new div element for each result
     results.forEach(result => {
 
-        console.log(result);
-        // debugger;
         // Create a new div element for the search result
-        const resultDiv = document.createElement('div');
+        let resultDiv = document.createElement('div');
+        resultDiv.classList.add('result-card');
         // Show the image
-        const image = document.createElement('img');
+        let image = document.createElement('img');
         console.log("The image to show is at: " + result[1].imageUrl);
         // image.src = database.countries[0].cities[1].imageUrl; // Esto funciona
         image.src = result[1].imageUrl;
+        image.classList.add('result-image');
         resultDiv.appendChild(image);
-        // Set the inner HTML of the result div to the search result
-        //resultDiv.innerHTML = result.name;
+        // Create a new paragraph element for the search result name
+        let resultName = document.createElement('p');
+        resultName.textContent = result[1].name;
+        resultName.classList.add('result-name');
+        resultDiv.appendChild(resultName);
+        // Create a new paragraph element for the search result description
+        let resultDescription = document.createElement('p');
+        resultDescription.textContent = result[1].description;
+        resultDescription.classList.add('result-description');
+        resultDiv.appendChild(resultDescription);
+
+        // Append a visit button
+        let visitButton = document.createElement('button');
+        visitButton.textContent = 'Visit';
+        visitButton.classList.add('visit-button');
+        resultDiv.appendChild(visitButton);
+
         // Append the result div to the search results container    
         searchResults.appendChild(resultDiv);
-    
+
+
+        // Create a new div element for the search result
+        resultDiv = document.createElement('div');
+        resultDiv.classList.add('result-card');
+        // Show the image
+        image = document.createElement('img');
+        console.log("The image to show is at: " + result[1].imageUrl);
+        // image.src = database.countries[0].cities[1].imageUrl; // Esto funciona
+        image.src = result[0].imageUrl;
+        image.classList.add('result-image');
+        resultDiv.appendChild(image);
+        // Create a new paragraph element for the search result name
+        resultName = document.createElement('p');
+        resultName.textContent = result[0].name;
+        resultName.classList.add('result-name');
+        resultDiv.appendChild(resultName);
+        // Create a new paragraph element for the search result description
+        resultDescription = document.createElement('p');
+        resultDescription.textContent = result[0].description;
+        resultDescription.classList.add('result-description');
+        resultDiv.appendChild(resultDescription);
+
+        // Append a visit button
+        visitButton = document.createElement('button');
+        visitButton.textContent = 'Visit';
+        visitButton.classList.add('visit-button');
+        resultDiv.appendChild(visitButton);
+
+        // Append the result div to the search results container    
+        searchResults.appendChild(resultDiv);
+
     })
 
 }
@@ -70,6 +117,8 @@ function clearResults() {
     console.log('Clearing search results');
     // Get the search results container createElement
     const searchResults = document.getElementById('search-results');
+    results = [];
     // Clear the search results container
     searchResults.innerHTML = '';
+    searchResults.style.visibility = 'hidden';
 }
