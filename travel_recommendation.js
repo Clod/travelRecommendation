@@ -19,6 +19,11 @@ document.getElementById('btnSearch').addEventListener('click', search);
 //Attach clear event listener to the clear button
 document.getElementById('btnClear').addEventListener('click', clearResults);
 
+// Add event listener to select all text in input when focused
+document.getElementById('conditionInput').addEventListener('focus', function() {
+    this.select();
+});
+
 // Initialize an empty array to store the search results
 results = []
 
